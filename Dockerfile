@@ -3,6 +3,7 @@ RUN mkdir app
 WORKDIR /app
 COPY pom.xml .
 COPY src .
+RUN ls
 RUN mvn clean package --file pom.xml -DskipTests
 
 FROM adoptopenjdk/openjdk11:jre-11.0.6_10-alpine
