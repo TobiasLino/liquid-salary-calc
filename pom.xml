@@ -41,6 +41,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>jarTest1</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
