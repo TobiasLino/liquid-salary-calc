@@ -10,4 +10,5 @@ RUN ls target/
 
 FROM adoptopenjdk/openjdk11:jre-11.0.6_10-alpine
 EXPOSE 8080
-ENTRYPOINT java -jar target/jarTest1.jar
+ADD jarTest1.jar target/jarTest1.jar
+ENTRYPOINT java -jar jarTest1.jar
