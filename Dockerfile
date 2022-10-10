@@ -5,6 +5,8 @@ COPY pom.xml .
 COPY src src/
 RUN ls
 RUN mvn clean package --file pom.xml -DskipTests
+RUN ls
+RUN ls target/
 
 FROM adoptopenjdk/openjdk11:jre-11.0.6_10-alpine
 EXPOSE 8080
