@@ -3,13 +3,9 @@ RUN mkdir app
 WORKDIR /app
 COPY pom.xml .
 COPY src src/
-RUN ls
 RUN mvn clean package --file pom.xml -DskipTests
-RUN ls
-RUN ls target/
 
 FROM adoptopenjdk/openjdk11:jre-11.0.6_10-alpine
+COPY --from=build /app/target/jarTest1.jar app.jar
 EXPOSE 8080
-COPY jarTest1.jar target/jarTest1.jar
-RUN ls
-ENTRYPOINT java -jar jarTest1.jar
+ENTRYPOINT java -jar app.jar
