@@ -1,4 +1,4 @@
-FROM maven:3.6.3-openjdk-11-slim AS buil
+FROM maven:3.6.3-openjdk-11-slim AS build
 RUN mkdir app
 WORKDIR /app
 COPY pom.xml .
